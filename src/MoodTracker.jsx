@@ -43,13 +43,14 @@ function MoodTracker() {
             const numericValue = value === "" ? "" : Math.max(0, Number(value));
             setFormData((prev) => ({ ...prev, [name]: numericValue }));
         } else {
+            // For other fields, just update the value.
             setFormData((prev) => ({ ...prev, [name]: value }));
         }
     }
 
     // This function handles form submission
     function handleSubmit(event) {
-        event.preventDefault();
+        event.preventDefault(); // This stops the page from refreshing.
         // Check if required fields are filled
         if (formData.day && formData.mood) {
             const newEntry = {
@@ -58,11 +59,13 @@ function MoodTracker() {
                 margaritas: Number(formData.margaritas) || 0,
                 chanclas: Number(formData.chanclas) || 0
             };
+            // Add the new log to the list of logs.
             setEntries((prevEntries) => [...prevEntries, newEntry]);
             // Reset form after submission
             setFormData({ day: "", mood: "", cleanliness: "", cafecitos: "", margaritas: "", chanclas: "" });
             setError("");
         } else {
+            // Show an error if day or mood is missing.
             setError("Please select a day and mood to log your entry.");
         }
     }
