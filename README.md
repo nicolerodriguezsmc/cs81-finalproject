@@ -16,7 +16,7 @@ An interactive React app designed for Latina Moms to track their daily mood, hou
 
 - Dropdowns for selecting day, mood, and cleanliness levels
 - Number fields for tracking drinks and chanclas thrown
-- Mood-based song recommendations<img width="1840" height="1191" alt="Screenshot 2025-08-03 at 11 00 06 PM" src="https://github.com/user-attachments/assets/0b99be06-1a91-46fe-a7b5-059792297dc8" />
+- Mood-based song recommendations
 
 - Entries saved to localStorage for persistence
 - Clear all entries button to reset the log
